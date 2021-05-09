@@ -1,0 +1,19 @@
+{
+  "name": "davidofwisdom",
+  "version": "1.0.0",
+  "description": "David Kirsh and his many words of wisdom ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/21grahams/davidOfWisdom.git"
+  },
+  "author": "Graham Kirsh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/21grahams/davidOfWisdom/issues"
+  },
+  "homepage": "https://github.com/21grahams/davidOfWisdom#readme"
+}
