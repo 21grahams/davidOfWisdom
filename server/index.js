@@ -1,9 +1,10 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const app = express();
+const port = 3000;
 const path = require('path');
-const pool = require('../database/index.js')
-const bodyParser = require('body-parser')
+const axios = require('axios');
+const pool = require('../database/index.js');
+const bodyParser = require('body-parser');
 const cors = require('cors');
 
 //=====================
