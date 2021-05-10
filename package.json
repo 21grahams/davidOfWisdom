@@ -4,7 +4,7 @@
   "description": "David Kirsh and his many words of wisdom ",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server/index.js",
+    "server": "nodemon server/index.js",
     "build": "webpack -d --watch"
   },
   "repository": {

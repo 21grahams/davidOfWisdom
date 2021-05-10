@@ -9,7 +9,7 @@ class App extends React.Component {
     console.log('making it here?')
     return (
       <div>
-        Hello Graham
+        Hello Graham. BAHHHHH IM MATT
       </div>
     )
   }
