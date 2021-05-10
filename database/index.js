@@ -10,6 +10,7 @@ const pool = new Pool({
 
 pool.query('SELECT NOW()', (err, res) => {
   console.log('THIS IS THE DB TEST: ', err, res.rows)
+  console.log(`David's Database is up and running!`)
 })
 
 module.exports = pool;

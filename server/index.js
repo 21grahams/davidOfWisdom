@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const port = 3000
 const path = require('path');
+const pool = require('../database/index.js')
 const bodyParser = require('body-parser')
 const cors = require('cors');
 
@@ -19,6 +20,12 @@ app.get('/', (req, res) => {
   res.send('Hello World YEEE!')
 })
 
+
+//=============================================
+//=============================================
+
+
+//=========spinning up the server=============
 app.listen(port, () => {
   console.log(`Papa Kirsh App listening at http://localhost:${port}`)
 })
