@@ -18,24 +18,37 @@ app.use(cors());
 //=====================
 /////// Routes ////////
 //=====================
+
+// get request //
 app.get('/dad', (req, res) => {
   let str = 'SELECT * from sayings';
   db.getNewSayings(str, (err, results) => {
     if (err) {
-      console.log('ERROR ON SERVER SIDE: ', err);
+      console.log('ERROR WITH GET REQUEST: ', err);
       res.sendStatus(404);
     } else {
       res.send(results.rows);
     }
-  })
-})
+  });
+});
+
+// post request //
+app.post('/dad', (req, res) => {
+  let message = [req.body.description]
+  db.postNewSayings(message, (err, results) => {
+    if (err) {
+      console.log('ERROR WITH POST REQUEST: ', err);
+      res.sendStatus(404);
+    } else {
+      res.sendStatus(201).send('POSTED!')
+    }
+  });
+});
 
 
-//=============================================
-//=============================================
-
-
-//=========spinning up the server=============
+//=================================
+/////// Spin Up The Server ////////
+//=================================
 app.listen(port, () => {
   console.log(`Papa Kirsh App listening at http://localhost:${port}`)
 })
