@@ -6,6 +6,7 @@ const axios = require('axios');
 const pool = require('../database/index.js');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const db = require('../database/queries.js')
 
 //=====================
 ///// Middleware //////
@@ -18,13 +19,13 @@ app.use(cors());
 /////// Routes ////////
 //=====================
 app.get('/dad', (req, res) => {
-  let str = 'SELECT * from sayings'
-  db.pool(str, (err, response) => {
+  let str = 'SELECT * from sayings';
+  db.getNewSayings(str, (err, results) => {
     if (err) {
       console.log('ERROR ON SERVER SIDE: ', err);
       res.sendStatus(404);
     } else {
-      res.send(results);
+      res.send(results.rows);
     }
   })
 })
