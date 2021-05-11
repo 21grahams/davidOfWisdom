@@ -1,6 +1,6 @@
 import React from 'react';
 import Map from './Map.jsx'
-import Axios from 'axios';
+import axios from 'axios';
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -21,8 +21,8 @@ class App extends React.Component {
         this.setState({
           data: res.data
         })
-      .catch(err => console.log('ERROR WITH DATA FETCH: ', err))
       })
+      .catch(err => console.log('ERROR WITH DATA FETCH: ', err))
   }
 
   render() {
