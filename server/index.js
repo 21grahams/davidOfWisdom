@@ -40,7 +40,7 @@ app.post('/dad', (req, res) => {
       console.log('ERROR WITH POST REQUEST: ', err);
       res.sendStatus(404);
     } else {
-      res.sendStatus(201).send('POSTED!')
+      res.status(201).send('POSTED!')
     }
   });
 });
