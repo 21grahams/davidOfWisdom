@@ -1,11 +1,11 @@
 import React from 'react';
 import Sentence from './Sentence.jsx'
 
-const Map = (props) => {
+const Map = ({data}) => {
 
   return (
     <div>
-      {props.data.map((sentence, i) => (
+      {data.map((sentence, i) => (
         <Sentence sentence={sentence} key={i}/>
       ))}
     </div>

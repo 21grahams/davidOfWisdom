@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Sentence = (props) => {
+const Sentence = ({sentence}) => {
 
   return (
     <div>
-      {props.sentence.description}
+      {sentence.description}
     </div>
   )
 }
