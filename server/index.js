@@ -17,8 +17,16 @@ app.use(cors());
 //=====================
 /////// Routes ////////
 //=====================
-app.get('/', (req, res) => {
-  res.send('Hello World YEEE!')
+app.get('/dad', (req, res) => {
+  let str = 'SELECT * from sayings'
+  db.pool(str, (err, response) => {
+    if (err) {
+      console.log('ERROR ON SERVER SIDE: ', err);
+      res.sendStatus(404);
+    } else {
+      res.send(results);
+    }
+  })
 })
 
 
