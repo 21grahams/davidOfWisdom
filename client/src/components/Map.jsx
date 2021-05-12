@@ -1,13 +1,13 @@
 import React from 'react';
-import Sentence from './Sentence.jsx'
+// import Sentence from './Sentence.jsx'
 
 const Map = ({data}) => {
-
+  // const items = data.description;
+  let item = data[Math.floor(Math.random() * data.length)];
+  console.log('item: ', item)
   return (
     <div>
-      {data.map((sentence, i) => (
-        <Sentence sentence={sentence} key={i}/>
-      ))}
+      {item ? item.description : null}
     </div>
   )
 

@@ -1,12 +1,14 @@
-import React from 'react';
+// import React from 'react';
 
-const Sentence = ({sentence}) => {
+// // const Sentence = ({sentence}) => {
+// //   const items = sentence.description;
+// //   const item = items[Math.floor(Math.random() * items.length)];
+// //   console.log('item: ', item)
+// //   return (
+// //     <div>
+// //       {item}
+// //     </div>
+// //   )
+// // }
 
-  return (
-    <div>
-      {sentence.description}
-    </div>
-  )
-}
-
-export default Sentence;
+// export default Sentence;
