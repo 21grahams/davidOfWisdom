@@ -4,9 +4,9 @@ const Map = ({data}) => {
   const item = data[Math.floor(Math.random() * data.length)];
   console.log('item: ', item)
   return (
-    <div>
+    <span className='RandomPhrase'>
       {item ? item.description : null}
-    </div>
+    </span>
   )
 
 }
