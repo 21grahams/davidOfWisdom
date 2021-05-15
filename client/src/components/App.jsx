@@ -1,16 +1,22 @@
 import React from 'react';
 import Map from './Map.jsx'
-import Form from './Form.jsx'
 import axios from 'axios';
+import ModalHome from './ModalHome.jsx'
+import { Button, Modal } from "react-bootstrap";
+import { Image } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 class App extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      data: []
+      data: [],
+      showModalState: false
     }
     this.renderButton = this.renderButton.bind(this);
     this.addPost = this.addPost.bind(this);
+    this.showModal = this.showModal.bind(this);
   }
 
   renderButton() {
@@ -29,12 +35,27 @@ class App extends React.Component {
     .catch(err => console.log('Error with post: ', err))
   }
 
+  showModal() {
+    this.setState({
+      showModalState: !this.state.showModalState
+    })
+  }
+
   render() {
     return (
       <div>
         <button className='GetFed' onClick={this.renderButton}>Get Fed</button>
         <Map data={this.state.data}/>
-        <Form addPost={this.addPost}/>
+
+        <Button variant="primary" onClick={this.showModal}>
+        Add New Slang
+      </Button>
+
+      <ModalHome
+        show={this.state.showModalState}
+        onHide={this.showModal}
+      />
+
       </div>
     )
   }
