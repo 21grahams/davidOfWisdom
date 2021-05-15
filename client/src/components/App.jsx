@@ -40,7 +40,7 @@ class App extends React.Component {
     console.log('making it here?')
     return (
       <div>
-        <button className='MoreWisdom' onClick={this.renderButton}>More Wisdom</button>
+        <button className='GetFed' onClick={this.renderButton}>Get Fed</button>
         <Map data={this.state.data}/>
       </div>
     )
