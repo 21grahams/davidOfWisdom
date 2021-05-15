@@ -52,6 +52,7 @@ class App extends React.Component {
       </Button>
 
       <ModalHome
+        addNewPost={this.addPost}
         show={this.state.showModalState}
         onHide={this.showModal}
       />

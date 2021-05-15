@@ -10,19 +10,21 @@ class ModalHome extends React.Component {
       description: "",
       setModalShow: false,
     };
-    this.addPost = this.addPost.bind(this);
+    this.handlePost = this.handlePost.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.showModal = this.showModal.bind(this);
+    this.reset = this.reset.bind(this);
   }
 
-  addPost() {
+  handlePost() {
     this.setState({ [event.target.name]: event.target.value });
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.addPost(this.state);
+    this.props.addNewPost(this.state);
     this.setState({ description: "" });
+    this.props.onHide();
   }
 
   showModal() {
@@ -31,35 +33,42 @@ class ModalHome extends React.Component {
     });
   }
 
+  reset() {
+    this.setState({
+      description: ''
+    });
+    this.props.onHide();
+  }
+
   render() {
+    const {addNewPost, ...rest} = this.props;
+
     return (
       <div>
-
         <Modal
-          {...this.props}
+          {...rest}
           size="sm"
           aria-labelledby="contained-modal-title-vcenter"
           centered
-          backdrop='static'
-       >
-          <Modal.Header closeButton>
+          backdrop="static"
+        >
+          <Modal.Header>
             <Modal.Title id="contained-modal-title-vcenter">
-              Modal heading
+              Wisdom de la Kirsh
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <h4>Add Some Thoughts Papa Kirsh</h4>
-            <input
-          className="PostDescription"
-          name="description"
-          placeholder="Add Description..."
-          value={this.state.description}
-          onChange={this.addPost}
-        ></input>
+            <textarea
+              className="PostDescription"
+              name="description"
+              placeholder="Add Some Thoughts Papa Kirsh..."
+              value={this.state.description}
+              onChange={this.handlePost}
+            ></textarea>
           </Modal.Body>
           <Modal.Footer>
-          <Button onClick={this.handleSubmit}>Submit</Button>
-            <Button onClick={this.props.onHide}>Close</Button>
+            <Button onClick={this.handleSubmit}>Submit</Button>
+            <Button variant="secondary" onClick={this.reset}>Close</Button>
           </Modal.Footer>
         </Modal>
       </div>
