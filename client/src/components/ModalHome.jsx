@@ -9,11 +9,13 @@ class ModalHome extends React.Component {
     this.state = {
       description: "",
       setModalShow: false,
+      descriptionError: ''
     };
     this.handlePost = this.handlePost.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.showModal = this.showModal.bind(this);
     this.reset = this.reset.bind(this);
+    this.validate = this.validate.bind(this);
   }
 
   handlePost() {
@@ -22,9 +24,14 @@ class ModalHome extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.addNewPost(this.state);
-    this.setState({ description: "" });
-    this.props.onHide();
+    let isValid = this.validate();
+    if (isValid) {
+      this.props.addNewPost(this.state);
+      this.setState({ description: "" });
+      this.props.onHide();
+    } else {
+
+    }
   }
 
   showModal() {
@@ -35,9 +42,25 @@ class ModalHome extends React.Component {
 
   reset() {
     this.setState({
-      description: ''
+      description: '',
+      descriptionError: ''
     });
     this.props.onHide();
+  }
+
+  validate() {
+    let descriptionError = '';
+
+    if (!this.state.description) {
+      descriptionError = 'Field cannot be blank';
+    }
+    if (descriptionError) {
+      this.setState({
+        descriptionError
+      })
+      return false;
+    }
+    return true;
   }
 
   render() {
@@ -45,6 +68,7 @@ class ModalHome extends React.Component {
 
     return (
       <div>
+
         <Modal
           {...rest}
           size="sm"
@@ -52,6 +76,7 @@ class ModalHome extends React.Component {
           centered
           backdrop="static"
         >
+
           <Modal.Header>
             <Modal.Title id="contained-modal-title-vcenter">
               Wisdom de la Kirsh
@@ -65,6 +90,8 @@ class ModalHome extends React.Component {
               value={this.state.description}
               onChange={this.handlePost}
             ></textarea>
+              <div style={{color: 'red'}}>{this.state.descriptionError}</div>
+
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.handleSubmit}>Submit</Button>
