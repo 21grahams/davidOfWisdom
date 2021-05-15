@@ -9,24 +9,9 @@ class App extends React.Component {
     this.state = {
       data: []
     }
-    // this.getAllData = this.getAllData.bind(this);
     this.renderButton = this.renderButton.bind(this);
     this.addPost = this.addPost.bind(this);
   }
-
-  // componentDidMount() {
-  //   this.getAllData();
-  // }
-
-  // getAllData() {
-  //   axios.get('/dad')
-  //     .then(res => {
-  //       this.setState({
-  //         data: res.data
-  //       })
-  //     })
-  //     .catch(err => console.log('ERROR WITH DATA FETCH: ', err))
-  // }
 
   renderButton() {
     axios.get('/dad')
@@ -39,11 +24,12 @@ class App extends React.Component {
   }
 
   addPost(saying) {
-    console.log('working!')
+    axios.post('/dad', saying)
+    .then(res => console.log('Successful Post! ', res))
+    .catch(err => console.log('Error with post: ', err))
   }
 
   render() {
-    console.log('making it here?')
     return (
       <div>
         <button className='GetFed' onClick={this.renderButton}>Get Fed</button>
