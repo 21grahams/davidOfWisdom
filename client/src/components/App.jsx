@@ -1,5 +1,6 @@
 import React from 'react';
 import Map from './Map.jsx'
+import Form from './Form.jsx'
 import axios from 'axios';
 class App extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class App extends React.Component {
     }
     // this.getAllData = this.getAllData.bind(this);
     this.renderButton = this.renderButton.bind(this);
+    this.addPost = this.addPost.bind(this);
   }
 
   // componentDidMount() {
@@ -46,6 +48,7 @@ class App extends React.Component {
       <div>
         <button className='GetFed' onClick={this.renderButton}>Get Fed</button>
         <Map data={this.state.data}/>
+        <Form addPost={this.addPost}/>
       </div>
     )
   }
