@@ -36,6 +36,10 @@ class App extends React.Component {
     .catch(err => console.log('ERROR WITH DATA FETCH: ', err))
   }
 
+  addPost(saying) {
+    console.log('working!')
+  }
+
   render() {
     console.log('making it here?')
     return (
