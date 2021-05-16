@@ -29,8 +29,6 @@ class ModalHome extends React.Component {
       this.props.addNewPost(this.state);
       this.setState({ description: "" });
       this.props.onHide();
-    } else {
-
     }
   }
 
