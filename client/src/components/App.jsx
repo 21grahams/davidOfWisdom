@@ -47,7 +47,7 @@ class App extends React.Component {
         <button className='GetFed' onClick={this.renderButton}>Get Fed</button>
         <Map data={this.state.data}/>
 
-        <Button variant="primary" onClick={this.showModal}>
+        <Button className='addNewSlang' variant="primary" onClick={this.showModal}>
         Add New Slang
       </Button>
 
