@@ -1,5 +1,5 @@
 body {
-  background-color: black;
+  background-color: black !important;
   line-height: 1.7;
   font-size: 19px;
 }
