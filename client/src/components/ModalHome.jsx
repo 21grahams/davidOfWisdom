@@ -9,7 +9,7 @@ class ModalHome extends React.Component {
     this.state = {
       description: "",
       setModalShow: false,
-      descriptionError: ''
+      descriptionError: "",
     };
     this.handlePost = this.handlePost.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -40,33 +40,32 @@ class ModalHome extends React.Component {
 
   reset() {
     this.setState({
-      description: '',
-      descriptionError: ''
+      description: "",
+      descriptionError: "",
     });
     this.props.onHide();
   }
 
   validate() {
-    let descriptionError = '';
+    let descriptionError = "";
 
     if (!this.state.description) {
-      descriptionError = 'Field cannot be blank';
+      descriptionError = "Field cannot be blank";
     }
     if (descriptionError) {
       this.setState({
-        descriptionError
-      })
+        descriptionError,
+      });
       return false;
     }
     return true;
   }
 
   render() {
-    const {addNewPost, ...rest} = this.props;
+    const { addNewPost, ...rest } = this.props;
 
     return (
       <div>
-
         <Modal
           {...rest}
           size="sm"
@@ -74,7 +73,6 @@ class ModalHome extends React.Component {
           centered
           backdrop="static"
         >
-
           <Modal.Header>
             <Modal.Title id="contained-modal-title-vcenter">
               Wisdom de la Kirsh
@@ -88,12 +86,13 @@ class ModalHome extends React.Component {
               value={this.state.description}
               onChange={this.handlePost}
             ></textarea>
-              <div style={{color: 'red'}}>{this.state.descriptionError}</div>
-
+            <div style={{ color: "red" }}>{this.state.descriptionError}</div>
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={this.handleSubmit}>Submit</Button>
-            <Button variant="secondary" onClick={this.reset}>Close</Button>
+            <Button variant="secondary" onClick={this.reset}>
+              Close
+            </Button>
           </Modal.Footer>
         </Modal>
       </div>

@@ -46,7 +46,10 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Button className="GetFed" onClick={this.renderButton}>
+        <Button
+          className="GetFed"
+          onClick={this.renderButton}
+        >
           Get Fed
         </Button>
 
