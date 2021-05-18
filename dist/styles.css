@@ -4,13 +4,16 @@ body {
   font-size: 19px;
 }
 
+.headerContainer {
+  background-color: white;
+}
+
 .logo {
-  font-size: 180px;
+  font-size: 20px;
   color: #099ef5;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-align: center;
   justify-content: center;
-  /* margin-top: 10px; */
 }
 
 .RandomPhrase {
@@ -34,22 +37,15 @@ body {
   color: white;
   margin: 0;
   position: absolute;
-  margin: 0;
-  position: absolute;
-  top: 3%;
+  top: 10%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
-.GetFed:hover {
-  opacity: 0.7;
-  cursor: pointer;
-}
-
 .addNewSlang {
   position: absolute;
-  top: 85%;
+  bottom: 2%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
