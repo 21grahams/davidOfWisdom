@@ -16,6 +16,11 @@ body {
   justify-content: center;
 }
 
+.PostDescription {
+  resize: vertical;
+  max-height: 200px;
+}
+
 .RandomPhrase {
   margin: 2rem;
   text-align: center;
