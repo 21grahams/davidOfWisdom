@@ -2,11 +2,11 @@ body {
   background-color: black !important;
   line-height: 1.7;
   font-size: 19px;
-  background-image: url('https://cdn.britannica.com/53/180553-050-FE609C89/Thinker-Auguste-Rodin-Museum-Paris-1904.jpg');
-  /* background-position: center; */
-  background-repeat: no-repeat;
+  background-image: url('https://mymodernmet.com/wp/wp-content/uploads/2021/03/the-thinker-auguste-rodin-1.jpg');
+  background-position: top;
+  background-repeat:repeat;
   background-size: cover;
-  /* height: 1500px; */
+  /* height: 900px; */
 }
 
 .headerContainer {
