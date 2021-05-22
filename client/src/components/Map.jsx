@@ -8,5 +8,4 @@ const Map = ({data}) => {
     </div>
   )
 }
-
 export default Map;
