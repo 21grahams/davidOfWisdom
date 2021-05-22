@@ -45,6 +45,17 @@ app.post('/dad', (req, res) => {
   });
 });
 
+// delete request //
+app.delete('/dad/:id', (req, res) => {
+  let id = req.params.id;
+  db.deletePost(id, (err, results) => {
+    if (err) {
+      res.sendStatus(404);
+    } else {
+      res.sendStatus(200);
+    }
+  });
+});
 
 //=================================
 /////// Spin Up The Server ////////

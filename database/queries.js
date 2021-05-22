@@ -26,7 +26,20 @@ const postNewSayings = (data, cb) => {
   });
 };
 
+// delete request query //
+const deletePost = (id, cb) => {
+  console.log('id in database: ', id)
+  pool.query(`DELETE FROM sayings WHERE id = ${id}`, (err, results) => {
+    if (err) {
+      cb(err, null);
+    } else {
+      cb(null, results)
+    }
+  })
+}
+
 module.exports = {
   getNewSayings,
-  postNewSayings
+  postNewSayings,
+  deletePost
 }

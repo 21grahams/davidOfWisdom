@@ -4,9 +4,9 @@ import { Button } from "react-bootstrap";
 const Map = ({ data, removePost }) => {
   const item = data[Math.floor(Math.random() * data.length)];
 
-  const addDelete = () => {
+  const addDelete = (id) => {
     return (
-      <Button variant="secondary" className="DeleteButton" onClick={removePost}>
+      <Button variant="secondary" className="DeleteButton" onClick={() => removePost(id)}>
         Delete
       </Button>
     );
@@ -17,7 +17,7 @@ const Map = ({ data, removePost }) => {
       {item ? (
         <span style={{ padding: "10px" }} className="RandomPhrase">
           {item.description}
-          {addDelete()}
+          {addDelete(item.id)}
         </span>
       ) : null}
     </div>

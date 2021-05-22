@@ -45,8 +45,11 @@ class App extends React.Component {
     });
   }
 
-  removePost() {
-    console.log('removal worked')
+  removePost(saying) {
+    console.log('saying: ', saying)
+    axios.delete('/dad', saying)
+      .then(res => console.log('deleted! ', res))
+      .catch(err => console.log('error with delete: ', err));
   }
 
   render() {
