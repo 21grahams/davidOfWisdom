@@ -48,7 +48,13 @@ class App extends React.Component {
   removePost(id) {
     axios
       .delete(`/dad/${id.id}`)
-      .then((res) => console.log("LEGGO FAM: ", res))
+      .then(alert('DONE BEEN DELETED FAM'))
+      axios.get('/dad')
+        .then((res) => {
+          this.setState({
+            data: res.data,
+          })
+        })
       .catch((err) => console.log("error with delete: ", err));
   }
 
