@@ -54,6 +54,10 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.DeleteButton {
+  margin-left: 15px !important;
+}
+
 .addNewSlang {
   position: absolute;
   bottom: 2%;
