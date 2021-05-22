@@ -4,7 +4,7 @@ body {
   font-size: 19px;
   background-image: url('https://mymodernmet.com/wp/wp-content/uploads/2021/03/the-thinker-auguste-rodin-1.jpg');
   /* background-position: center; */
-  background-repeat: repeat-y;
+  background-repeat: repeat;
   background-size: cover;
   /* height: 900px; */
 }
@@ -27,10 +27,10 @@ body {
 }
 
 .RandomPhrase {
-  margin: 2rem;
+  margin: 1rem;
   text-align: center;
   width: auto;
-  background-color: #099ef5;
+  background-color: white;
   border-radius: 3px;
   margin: 0;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -39,6 +39,7 @@ body {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  box-shadow: 7px 10px 12px -5px rgba(0,0,0.56);
 }
 
 .GetFed {

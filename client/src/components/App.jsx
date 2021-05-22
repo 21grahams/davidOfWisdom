@@ -1,6 +1,7 @@
 import React from "react";
 import Map from "./Map.jsx";
 import axios from "axios";
+import $ from 'jquery';
 import ModalHome from "./ModalHome.jsx";
 import { Button, Modal } from "react-bootstrap";
 import { Image } from "react-bootstrap";
