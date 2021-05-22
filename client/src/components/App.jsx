@@ -18,6 +18,7 @@ class App extends React.Component {
     this.renderButton = this.renderButton.bind(this);
     this.addPost = this.addPost.bind(this);
     this.showModal = this.showModal.bind(this);
+    this.removePost = this.removePost.bind(this);
   }
 
   renderButton() {
@@ -44,6 +45,10 @@ class App extends React.Component {
     });
   }
 
+  removePost() {
+    console.log('removal worked')
+  }
+
   render() {
     return (
       <div>
@@ -54,7 +59,7 @@ class App extends React.Component {
           Get Fed
         </Button>
 
-        <Map data={this.state.data} />
+        <Map data={this.state.data} removePost={this.removePost}/>
 
         <Button
           className="addNewSlang"

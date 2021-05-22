@@ -1,12 +1,12 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 
-const Map = ({ data }) => {
+const Map = ({ data, removePost }) => {
   const item = data[Math.floor(Math.random() * data.length)];
 
   const addDelete = () => {
     return (
-      <Button variant="secondary" className="DeleteButton">
+      <Button variant="secondary" className="DeleteButton" onClick={removePost}>
         Delete
       </Button>
     );
