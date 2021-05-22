@@ -33,7 +33,7 @@ const deletePost = (id, cb) => {
     if (err) {
       cb(err, null);
     } else {
-      cb(null, results)
+      cb(null, results);
     }
   })
 }

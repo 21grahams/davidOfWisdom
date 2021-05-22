@@ -1,7 +1,7 @@
 import React from "react";
 import Map from "./Map.jsx";
 import axios from "axios";
-import $ from 'jquery';
+import $ from "jquery";
 import ModalHome from "./ModalHome.jsx";
 import { Button, Modal } from "react-bootstrap";
 import { Image } from "react-bootstrap";
@@ -45,24 +45,21 @@ class App extends React.Component {
     });
   }
 
-  removePost(saying) {
-    console.log('saying: ', saying)
-    axios.delete('/dad', saying)
-      .then(res => console.log('deleted! ', res))
-      .catch(err => console.log('error with delete: ', err));
+  removePost(id) {
+    axios
+      .delete(`/dad/${id.id}`)
+      .then((res) => console.log("LEGGO FAM: ", res))
+      .catch((err) => console.log("error with delete: ", err));
   }
 
   render() {
     return (
       <div>
-        <Button
-          className="GetFed"
-          onClick={this.renderButton}
-        >
+        <Button className="GetFed" onClick={this.renderButton}>
           Get Fed
         </Button>
 
-        <Map data={this.state.data} removePost={this.removePost}/>
+        <Map data={this.state.data} removePost={this.removePost} />
 
         <Button
           className="addNewSlang"
