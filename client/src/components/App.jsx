@@ -13,8 +13,7 @@ class App extends React.Component {
 
     this.state = {
       data: [],
-      showModalState: false,
-      isLoaded: false
+      showModalState: false
     };
     this.renderButton = this.renderButton.bind(this);
     this.addPost = this.addPost.bind(this);
