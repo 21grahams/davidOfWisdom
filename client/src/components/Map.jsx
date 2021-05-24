@@ -14,6 +14,7 @@ const Map = ({ data, removePost }) => {
 
   return (
     <div>
+
       {item ? (
         <span style={{ padding: "10px" }} className="RandomPhrase">
           {item.description}
