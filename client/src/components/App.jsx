@@ -15,13 +15,13 @@ class App extends React.Component {
       data: [],
       showModalState: false,
     };
-    this.renderButton = this.renderButton.bind(this);
+    this.grabWisdom = this.grabWisdom.bind(this);
     this.addPost = this.addPost.bind(this);
     this.showModal = this.showModal.bind(this);
     this.removePost = this.removePost.bind(this);
   }
 
-  renderButton() {
+  grabWisdom() {
     axios
       .get("/dad")
       .then((res) => {
@@ -46,21 +46,15 @@ class App extends React.Component {
   }
 
   removePost(id) {
-    axios.delete(`/dad/${id.id}`).then(alert("DONE BEEN DELETED FAM"));
-    axios
-      .get("/dad")
-      .then((res) => {
-        this.setState({
-          data: res.data,
-        });
-      })
+    axios.delete(`/dad/${id.id}`).then(alert("DONE BEEN DELETED FAM"))
       .catch((err) => console.log("error with delete: ", err));
+    this.grabWisdom();
   }
 
   render() {
     return (
       <div>
-        <Button className="GetFed" onClick={this.renderButton}>
+        <Button className="GetFed" onClick={this.grabWisdom}>
           Get Fed
         </Button>
 
