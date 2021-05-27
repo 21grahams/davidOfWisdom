@@ -75,7 +75,7 @@ class ModalHome extends React.Component {
         >
           <Modal.Header>
             <Modal.Title id="contained-modal-title-vcenter">
-              Wisdom de la Kirsh
+              Vanilla Thunder's Thoughts
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
