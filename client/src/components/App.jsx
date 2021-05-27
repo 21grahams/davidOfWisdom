@@ -13,7 +13,7 @@ class App extends React.Component {
 
     this.state = {
       data: [],
-      showModalState: false
+      showModalState: false,
     };
     this.renderButton = this.renderButton.bind(this);
     this.addPost = this.addPost.bind(this);
@@ -25,17 +25,11 @@ class App extends React.Component {
     axios
       .get("/dad")
       .then((res) => {
-        setTimeout(
-          function() {
-            this.setState({
-              data: res.data
-            });
-          }.bind(this),
-          1000
-          );
-        })
-        .catch((err) => console.log("ERROR WITH DATA FETCH: ", err))
-
+        this.setState({
+          data: res.data,
+        });
+      })
+      .catch((err) => console.log("ERROR WITH DATA FETCH: ", err));
   }
 
   addPost(saying) {
@@ -52,22 +46,20 @@ class App extends React.Component {
   }
 
   removePost(id) {
+    axios.delete(`/dad/${id.id}`).then(alert("DONE BEEN DELETED FAM"));
     axios
-      .delete(`/dad/${id.id}`)
-      .then(alert('DONE BEEN DELETED FAM'))
-      axios.get('/dad')
-        .then((res) => {
-          this.setState({
-            data: res.data,
-          })
-        })
+      .get("/dad")
+      .then((res) => {
+        this.setState({
+          data: res.data,
+        });
+      })
       .catch((err) => console.log("error with delete: ", err));
   }
 
   render() {
     return (
       <div>
-
         <Button className="GetFed" onClick={this.renderButton}>
           Get Fed
         </Button>
