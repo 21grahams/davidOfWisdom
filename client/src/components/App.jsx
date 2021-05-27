@@ -22,7 +22,7 @@ class App extends React.Component {
   }
 
   grabWisdom() {
-    axios
+      axios
       .get("/dad")
       .then((res) => {
         this.setState({
@@ -35,6 +35,7 @@ class App extends React.Component {
   addPost(saying) {
     axios
       .post("/dad", saying)
+      .then(alert('Added to Wisdom'))
       .then((res) => console.log("Successful Post! ", res))
       .catch((err) => console.log("Error with post: ", err));
   }
@@ -46,16 +47,17 @@ class App extends React.Component {
   }
 
   removePost(id) {
-    axios.delete(`/dad/${id.id}`).then(alert("DONE BEEN DELETED FAM"))
+    axios.delete(`/dad/${id.id}`)
+      .then(alert("Removed from Wisdom"))
+      .then(this.grabWisdom())
       .catch((err) => console.log("error with delete: ", err));
-    this.grabWisdom();
   }
 
   render() {
     return (
       <div>
         <Button className="GetFed" onClick={this.grabWisdom}>
-          Get Fed
+          Random Thoughts
         </Button>
 
         <Map data={this.state.data} removePost={this.removePost} />
