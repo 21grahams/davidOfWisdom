@@ -82,7 +82,7 @@ class ModalHome extends React.Component {
             <textarea
               className="PostDescription"
               name="description"
-              placeholder="Add Some Thoughts Papa Kirsh..."
+              placeholder="Give Me Your Wisdom..."
               value={this.state.description}
               onChange={this.handlePost}
             ></textarea>
