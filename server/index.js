@@ -1,7 +1,7 @@
 // test 3
 const express = require('express');
 const app = express();
-const port = 3001;
+const port = 3000;
 const path = require('path');
 const axios = require('axios');
 const pool = require('../database/index.js');
