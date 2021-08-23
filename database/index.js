@@ -1,7 +1,7 @@
 const Pool = require('pg').Pool
 
 const pool = new Pool({
-  user: 'me',
+  user: 'grahamkirsh',
   host: 'localhost',
   database: 'david',
   password: 'password',
@@ -9,7 +9,7 @@ const pool = new Pool({
 })
 
 pool.query('SELECT NOW()', (err, res) => {
-  console.log(`David's Database is running at: `, res.rows)
+  console.log(`David's Database is running!`)
 })
 
 module.exports = pool;
